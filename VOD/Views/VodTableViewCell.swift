@@ -17,8 +17,15 @@ class VodTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var sportsLabel: UILabel!
     
+    // School
+    @IBOutlet weak var SchoolsHorizontalStackView: UIStackView!
+    @IBOutlet weak var schoolOneStackView: UIStackView!
     @IBOutlet weak var schoolOneImageView: UIImageView!
+    @IBOutlet weak var schoolOneLabel: UILabel!
+    @IBOutlet weak var schoolTwoStackView: UIStackView!
     @IBOutlet weak var schoolTwoImageView: UIImageView!
+    @IBOutlet weak var schoolTwoLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

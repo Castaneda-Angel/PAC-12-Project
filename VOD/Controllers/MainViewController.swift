@@ -48,7 +48,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,13 +59,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.sportsLabel.text = vods[indexPath.row].sports[0].name ?? ""
         if vods[indexPath.row].schools.count == 1 {
             cell.schoolOneImageView.image = UIImage(data: vods[indexPath.row].schools[0].imageData!)
-            cell.schoolTwoImageView.isHidden = true
+            cell.schoolOneLabel.text = vods[indexPath.row].schools[0].name ?? ""
+            cell.schoolTwoStackView.isHidden = true
         } else if vods[indexPath.row].schools.count == 2 {
             cell.schoolOneImageView.image = UIImage(data: vods[indexPath.row].schools[0].imageData!)
+            cell.schoolOneLabel.text = vods[indexPath.row].schools[0].name ?? ""
+            
             cell.schoolTwoImageView.image = UIImage(data: vods[indexPath.row].schools[1].imageData!)
+            cell.schoolTwoLabel.text = vods[indexPath.row].schools[1].name ?? ""
         } else {
-            cell.schoolOneImageView.isHidden = true
-            cell.schoolTwoImageView.isHidden = true
+            cell.SchoolsHorizontalStackView.isHidden = true
         }
         
         NetworkManager.shared.getImageData(imageURL: vods[indexPath.row].images?.large ?? "", completionHandler: {
