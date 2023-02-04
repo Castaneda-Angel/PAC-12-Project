@@ -171,9 +171,8 @@
 		0BE5C470298B616B0059A6E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0BE5C483298F0ECD0059A6E1 /* VOD Table View Cell */,
 				0BE5C439298B4BF60059A6E1 /* Main.storyboard */,
-				0BE5C472298B63180059A6E1 /* VodTableViewCell.swift */,
-				0BE5C473298B63180059A6E1 /* VodTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +211,15 @@
 				0BE5C481298E06AB0059A6E1 /* School.swift */,
 			);
 			path = Schools;
+			sourceTree = "<group>";
+		};
+		0BE5C483298F0ECD0059A6E1 /* VOD Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C472298B63180059A6E1 /* VodTableViewCell.swift */,
+				0BE5C473298B63180059A6E1 /* VodTableViewCell.xib */,
+			);
+			path = "VOD Table View Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
