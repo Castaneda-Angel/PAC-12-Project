@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BE5C434298B4BF60059A6E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C433298B4BF60059A6E1 /* AppDelegate.swift */; };
+		0BE5C436298B4BF60059A6E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C435298B4BF60059A6E1 /* SceneDelegate.swift */; };
+		0BE5C438298B4BF60059A6E1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C437298B4BF60059A6E1 /* MainViewController.swift */; };
+		0BE5C43B298B4BF60059A6E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE5C439298B4BF60059A6E1 /* Main.storyboard */; };
+		0BE5C43D298B4BF70059A6E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BE5C43C298B4BF70059A6E1 /* Assets.xcassets */; };
+		0BE5C440298B4BF70059A6E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE5C43E298B4BF70059A6E1 /* LaunchScreen.storyboard */; };
+		0BE5C44B298B4BF70059A6E1 /* VODTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C44A298B4BF70059A6E1 /* VODTests.swift */; };
+		0BE5C455298B4BF70059A6E1 /* VODUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C454298B4BF70059A6E1 /* VODUITests.swift */; };
+		0BE5C457298B4BF70059A6E1 /* VODUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C456298B4BF70059A6E1 /* VODUITestsLaunchTests.swift */; };
+		0BE5C465298B4C5B0059A6E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C464298B4C5B0059A6E1 /* NetworkManager.swift */; };
+		0BE5C467298B4E1C0059A6E1 /* Vod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C466298B4E1C0059A6E1 /* Vod.swift */; };
+		0BE5C469298B58A50059A6E1 /* SportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C468298B58A50059A6E1 /* SportInfo.swift */; };
+		0BE5C46B298B58AB0059A6E1 /* SchoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C46A298B58AB0059A6E1 /* SchoolInfo.swift */; };
+		0BE5C46D298B5AB70059A6E1 /* Programs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C46C298B5AB70059A6E1 /* Programs.swift */; };
+		0BE5C46F298B5D110059A6E1 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C46E298B5D110059A6E1 /* Thumbnail.swift */; };
+		0BE5C474298B63180059A6E1 /* VodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C472298B63180059A6E1 /* VodTableViewCell.swift */; };
+		0BE5C475298B63180059A6E1 /* VodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE5C473298B63180059A6E1 /* VodTableViewCell.xib */; };
+		0BE5C477298CC3880059A6E1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C476298CC3880059A6E1 /* Utilities.swift */; };
+		0BE5C479298E033D0059A6E1 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C478298E033D0059A6E1 /* Sports.swift */; };
+		0BE5C47D298E05D00059A6E1 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C47C298E05D00059A6E1 /* Sport.swift */; };
+		0BE5C480298E06960059A6E1 /* Schools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C47F298E06960059A6E1 /* Schools.swift */; };
+		0BE5C482298E06AB0059A6E1 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C481298E06AB0059A6E1 /* School.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0BE5C447298B4BF70059A6E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BE5C428298B4BF60059A6E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BE5C42F298B4BF60059A6E1;
+			remoteInfo = VOD;
+		};
+		0BE5C451298B4BF70059A6E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BE5C428298B4BF60059A6E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BE5C42F298B4BF60059A6E1;
+			remoteInfo = VOD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BE5C430298B4BF60059A6E1 /* VOD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BE5C433298B4BF60059A6E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0BE5C435298B4BF60059A6E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0BE5C437298B4BF60059A6E1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0BE5C43A298B4BF60059A6E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0BE5C43C298B4BF70059A6E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0BE5C43F298B4BF70059A6E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0BE5C441298B4BF70059A6E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BE5C446298B4BF70059A6E1 /* VODTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VODTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BE5C44A298B4BF70059A6E1 /* VODTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VODTests.swift; sourceTree = "<group>"; };
+		0BE5C450298B4BF70059A6E1 /* VODUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VODUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BE5C454298B4BF70059A6E1 /* VODUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VODUITests.swift; sourceTree = "<group>"; };
+		0BE5C456298B4BF70059A6E1 /* VODUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VODUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BE5C464298B4C5B0059A6E1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0BE5C466298B4E1C0059A6E1 /* Vod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vod.swift; sourceTree = "<group>"; };
+		0BE5C468298B58A50059A6E1 /* SportInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportInfo.swift; sourceTree = "<group>"; };
+		0BE5C46A298B58AB0059A6E1 /* SchoolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolInfo.swift; sourceTree = "<group>"; };
+		0BE5C46C298B5AB70059A6E1 /* Programs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programs.swift; sourceTree = "<group>"; };
+		0BE5C46E298B5D110059A6E1 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		0BE5C472298B63180059A6E1 /* VodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VodTableViewCell.swift; sourceTree = "<group>"; };
+		0BE5C473298B63180059A6E1 /* VodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VodTableViewCell.xib; sourceTree = "<group>"; };
+		0BE5C476298CC3880059A6E1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		0BE5C478298E033D0059A6E1 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
+		0BE5C47C298E05D00059A6E1 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		0BE5C47F298E06960059A6E1 /* Schools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schools.swift; sourceTree = "<group>"; };
+		0BE5C481298E06AB0059A6E1 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0BE5C42D298B4BF60059A6E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BE5C443298B4BF70059A6E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BE5C44D298B4BF70059A6E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BE5C427298B4BF60059A6E1 = {
+			isa = PBXGroup;
+			children = (
+				0BE5C432298B4BF60059A6E1 /* VOD */,
+				0BE5C449298B4BF70059A6E1 /* VODTests */,
+				0BE5C453298B4BF70059A6E1 /* VODUITests */,
+				0BE5C431298B4BF60059A6E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0BE5C431298B4BF60059A6E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C430298B4BF60059A6E1 /* VOD.app */,
+				0BE5C446298B4BF70059A6E1 /* VODTests.xctest */,
+				0BE5C450298B4BF70059A6E1 /* VODUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0BE5C432298B4BF60059A6E1 /* VOD */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C471298B618C0059A6E1 /* Controllers */,
+				0BE5C470298B616B0059A6E1 /* Views */,
+				0BE5C463298B4C240059A6E1 /* Models */,
+				0BE5C433298B4BF60059A6E1 /* AppDelegate.swift */,
+				0BE5C435298B4BF60059A6E1 /* SceneDelegate.swift */,
+				0BE5C43C298B4BF70059A6E1 /* Assets.xcassets */,
+				0BE5C43E298B4BF70059A6E1 /* LaunchScreen.storyboard */,
+				0BE5C441298B4BF70059A6E1 /* Info.plist */,
+			);
+			path = VOD;
+			sourceTree = "<group>";
+		};
+		0BE5C449298B4BF70059A6E1 /* VODTests */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C44A298B4BF70059A6E1 /* VODTests.swift */,
+			);
+			path = VODTests;
+			sourceTree = "<group>";
+		};
+		0BE5C453298B4BF70059A6E1 /* VODUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C454298B4BF70059A6E1 /* VODUITests.swift */,
+				0BE5C456298B4BF70059A6E1 /* VODUITestsLaunchTests.swift */,
+			);
+			path = VODUITests;
+			sourceTree = "<group>";
+		};
+		0BE5C463298B4C240059A6E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C464298B4C5B0059A6E1 /* NetworkManager.swift */,
+				0BE5C46C298B5AB70059A6E1 /* Programs.swift */,
+				0BE5C47A298E05560059A6E1 /* VODs */,
+				0BE5C47B298E05BB0059A6E1 /* Sports */,
+				0BE5C47E298E067C0059A6E1 /* Schools */,
+				0BE5C46E298B5D110059A6E1 /* Thumbnail.swift */,
+				0BE5C476298CC3880059A6E1 /* Utilities.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0BE5C470298B616B0059A6E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C439298B4BF60059A6E1 /* Main.storyboard */,
+				0BE5C472298B63180059A6E1 /* VodTableViewCell.swift */,
+				0BE5C473298B63180059A6E1 /* VodTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0BE5C471298B618C0059A6E1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C437298B4BF60059A6E1 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0BE5C47A298E05560059A6E1 /* VODs */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C466298B4E1C0059A6E1 /* Vod.swift */,
+				0BE5C468298B58A50059A6E1 /* SportInfo.swift */,
+				0BE5C46A298B58AB0059A6E1 /* SchoolInfo.swift */,
+			);
+			path = VODs;
+			sourceTree = "<group>";
+		};
+		0BE5C47B298E05BB0059A6E1 /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C478298E033D0059A6E1 /* Sports.swift */,
+				0BE5C47C298E05D00059A6E1 /* Sport.swift */,
+			);
+			path = Sports;
+			sourceTree = "<group>";
+		};
+		0BE5C47E298E067C0059A6E1 /* Schools */ = {
+			isa = PBXGroup;
+			children = (
+				0BE5C47F298E06960059A6E1 /* Schools.swift */,
+				0BE5C481298E06AB0059A6E1 /* School.swift */,
+			);
+			path = Schools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0BE5C42F298B4BF60059A6E1 /* VOD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BE5C45A298B4BF70059A6E1 /* Build configuration list for PBXNativeTarget "VOD" */;
+			buildPhases = (
+				0BE5C42C298B4BF60059A6E1 /* Sources */,
+				0BE5C42D298B4BF60059A6E1 /* Frameworks */,
+				0BE5C42E298B4BF60059A6E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VOD;
+			productName = VOD;
+			productReference = 0BE5C430298B4BF60059A6E1 /* VOD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0BE5C445298B4BF70059A6E1 /* VODTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BE5C45D298B4BF70059A6E1 /* Build configuration list for PBXNativeTarget "VODTests" */;
+			buildPhases = (
+				0BE5C442298B4BF70059A6E1 /* Sources */,
+				0BE5C443298B4BF70059A6E1 /* Frameworks */,
+				0BE5C444298B4BF70059A6E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0BE5C448298B4BF70059A6E1 /* PBXTargetDependency */,
+			);
+			name = VODTests;
+			productName = VODTests;
+			productReference = 0BE5C446298B4BF70059A6E1 /* VODTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0BE5C44F298B4BF70059A6E1 /* VODUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BE5C460298B4BF70059A6E1 /* Build configuration list for PBXNativeTarget "VODUITests" */;
+			buildPhases = (
+				0BE5C44C298B4BF70059A6E1 /* Sources */,
+				0BE5C44D298B4BF70059A6E1 /* Frameworks */,
+				0BE5C44E298B4BF70059A6E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0BE5C452298B4BF70059A6E1 /* PBXTargetDependency */,
+			);
+			name = VODUITests;
+			productName = VODUITests;
+			productReference = 0BE5C450298B4BF70059A6E1 /* VODUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0BE5C428298B4BF60059A6E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					0BE5C42F298B4BF60059A6E1 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					0BE5C445298B4BF70059A6E1 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 0BE5C42F298B4BF60059A6E1;
+					};
+					0BE5C44F298B4BF70059A6E1 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 0BE5C42F298B4BF60059A6E1;
+					};
+				};
+			};
+			buildConfigurationList = 0BE5C42B298B4BF60059A6E1 /* Build configuration list for PBXProject "VOD" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0BE5C427298B4BF60059A6E1;
+			productRefGroup = 0BE5C431298B4BF60059A6E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0BE5C42F298B4BF60059A6E1 /* VOD */,
+				0BE5C445298B4BF70059A6E1 /* VODTests */,
+				0BE5C44F298B4BF70059A6E1 /* VODUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0BE5C42E298B4BF60059A6E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BE5C440298B4BF70059A6E1 /* LaunchScreen.storyboard in Resources */,
+				0BE5C475298B63180059A6E1 /* VodTableViewCell.xib in Resources */,
+				0BE5C43D298B4BF70059A6E1 /* Assets.xcassets in Resources */,
+				0BE5C43B298B4BF60059A6E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BE5C444298B4BF70059A6E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BE5C44E298B4BF70059A6E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0BE5C42C298B4BF60059A6E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BE5C46B298B58AB0059A6E1 /* SchoolInfo.swift in Sources */,
+				0BE5C474298B63180059A6E1 /* VodTableViewCell.swift in Sources */,
+				0BE5C477298CC3880059A6E1 /* Utilities.swift in Sources */,
+				0BE5C465298B4C5B0059A6E1 /* NetworkManager.swift in Sources */,
+				0BE5C438298B4BF60059A6E1 /* MainViewController.swift in Sources */,
+				0BE5C46F298B5D110059A6E1 /* Thumbnail.swift in Sources */,
+				0BE5C47D298E05D00059A6E1 /* Sport.swift in Sources */,
+				0BE5C467298B4E1C0059A6E1 /* Vod.swift in Sources */,
+				0BE5C46D298B5AB70059A6E1 /* Programs.swift in Sources */,
+				0BE5C480298E06960059A6E1 /* Schools.swift in Sources */,
+				0BE5C434298B4BF60059A6E1 /* AppDelegate.swift in Sources */,
+				0BE5C469298B58A50059A6E1 /* SportInfo.swift in Sources */,
+				0BE5C479298E033D0059A6E1 /* Sports.swift in Sources */,
+				0BE5C482298E06AB0059A6E1 /* School.swift in Sources */,
+				0BE5C436298B4BF60059A6E1 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BE5C442298B4BF70059A6E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BE5C44B298B4BF70059A6E1 /* VODTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BE5C44C298B4BF70059A6E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BE5C457298B4BF70059A6E1 /* VODUITestsLaunchTests.swift in Sources */,
+				0BE5C455298B4BF70059A6E1 /* VODUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0BE5C448298B4BF70059A6E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BE5C42F298B4BF60059A6E1 /* VOD */;
+			targetProxy = 0BE5C447298B4BF70059A6E1 /* PBXContainerItemProxy */;
+		};
+		0BE5C452298B4BF70059A6E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BE5C42F298B4BF60059A6E1 /* VOD */;
+			targetProxy = 0BE5C451298B4BF70059A6E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0BE5C439298B4BF60059A6E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0BE5C43A298B4BF60059A6E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0BE5C43E298B4BF70059A6E1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0BE5C43F298B4BF70059A6E1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0BE5C458298B4BF70059A6E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0BE5C459298B4BF70059A6E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0BE5C45B298B4BF70059A6E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4Q5XNTY23;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VOD/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angel.VOD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0BE5C45C298B4BF70059A6E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4Q5XNTY23;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VOD/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angel.VOD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0BE5C45E298B4BF70059A6E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4Q5XNTY23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angel.VODTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VOD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VOD";
+			};
+			name = Debug;
+		};
+		0BE5C45F298B4BF70059A6E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4Q5XNTY23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angel.VODTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VOD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VOD";
+			};
+			name = Release;
+		};
+		0BE5C461298B4BF70059A6E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4Q5XNTY23;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angel.VODUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VOD;
+			};
+			name = Debug;
+		};
+		0BE5C462298B4BF70059A6E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S4Q5XNTY23;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angel.VODUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VOD;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0BE5C42B298B4BF60059A6E1 /* Build configuration list for PBXProject "VOD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BE5C458298B4BF70059A6E1 /* Debug */,
+				0BE5C459298B4BF70059A6E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BE5C45A298B4BF70059A6E1 /* Build configuration list for PBXNativeTarget "VOD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BE5C45B298B4BF70059A6E1 /* Debug */,
+				0BE5C45C298B4BF70059A6E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BE5C45D298B4BF70059A6E1 /* Build configuration list for PBXNativeTarget "VODTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BE5C45E298B4BF70059A6E1 /* Debug */,
+				0BE5C45F298B4BF70059A6E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BE5C460298B4BF70059A6E1 /* Build configuration list for PBXNativeTarget "VODUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BE5C461298B4BF70059A6E1 /* Debug */,
+				0BE5C462298B4BF70059A6E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0BE5C428298B4BF60059A6E1 /* Project object */;
+}
