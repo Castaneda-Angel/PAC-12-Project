@@ -31,7 +31,6 @@ class MainViewController: UIViewController {
     }
     
     func playVideo(url: URL) {
-        print("TEST: url is \(url)")
         let player = AVPlayer(url: url)
         let vc = AVPlayerViewController()
         vc.player = player
@@ -58,14 +57,21 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.durationLabel.text = secondsToMinutesString(milliseconds: vods[indexPath.row].duration ?? 0)
         cell.sportsLabel.text = vods[indexPath.row].sports[0].name ?? ""
         if vods[indexPath.row].schools.count == 1 {
-            cell.schoolOneImageView.image = UIImage(data: vods[indexPath.row].schools[0].imageData!)
+            if let schoolOneImageData = vods[indexPath.row].schools[0].imageData {
+                cell.schoolOneImageView.image = UIImage(data: schoolOneImageData)
+            }
             cell.schoolOneLabel.text = vods[indexPath.row].schools[0].name ?? ""
             cell.schoolTwoStackView.isHidden = true
         } else if vods[indexPath.row].schools.count == 2 {
-            cell.schoolOneImageView.image = UIImage(data: vods[indexPath.row].schools[0].imageData!)
-            cell.schoolOneLabel.text = vods[indexPath.row].schools[0].name ?? ""
+            if let schoolOneImageData = vods[indexPath.row].schools[0].imageData {
+                cell.schoolOneImageView.image = UIImage(data: schoolOneImageData)
+            }
             
-            cell.schoolTwoImageView.image = UIImage(data: vods[indexPath.row].schools[1].imageData!)
+            if let schoolTwoImageData = vods[indexPath.row].schools[1].imageData {
+                cell.schoolTwoImageView.image = UIImage(data: schoolTwoImageData)
+            }
+            
+            cell.schoolOneLabel.text = vods[indexPath.row].schools[0].name ?? ""
             cell.schoolTwoLabel.text = vods[indexPath.row].schools[1].name ?? ""
         } else {
             cell.SchoolsHorizontalStackView.isHidden = true
@@ -90,13 +96,25 @@ extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height) {
+            tableView.tableFooterView = Bundle.loadView(fromNib: "loadingFooterView")
             guard !NetworkManager.shared.isPaginating else { return }
             NetworkManager.shared.getVODsList(fromNextPage: true, completionHandler: { vods in
                 self.vods += vods
                 DispatchQueue.main.async {
+                    self.tableView.tableFooterView = nil
                     self.tableView.reloadData()
                 }
             })
+        }
+    }
+}
+
+extension Bundle {
+    static func loadView(fromNib name: String) -> UIView {
+        if let view = Bundle.main.loadNibNamed(name, owner: nil)?.first as? UIView {
+            return view
+        } else {
+            return UIView()
         }
     }
 }
