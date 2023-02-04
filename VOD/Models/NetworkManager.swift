@@ -17,10 +17,17 @@ class NetworkManager {
     var allSports: [Int:Sport] = [:]
     var allSchools: [Int:School] = [:]
     
-    let baseURL = "https://api.pac-12.com/v3"
+    // Images
+    var thumbnailImages: [String:Data] = [:]
+    
+    let baseURL = "https://api.pac-12.com"
     let callQueue = OperationQueue()
     
-    func getVODsList(completionHandler: @escaping(_ allVods: [Vod]) -> Void) {
+    // Pagination
+    var nextPage: String?
+    var isPaginating: Bool = false
+    
+    func getVODsList(fromNextPage: Bool, completionHandler: @escaping(_ allVods: [Vod]) -> Void) {
         var vods: [Vod] = []
         
         let getVODsCalls = BlockOperation {
@@ -58,7 +65,7 @@ class NetworkManager {
             }
             
             group.enter()
-            self.getVODs(completionHandler: {
+            self.getVODs(fromNextPage: fromNextPage, completionHandler: {
                 vodsList in
                 var updatedVODs = vodsList
                 for i in 0..<updatedVODs.count {
@@ -75,11 +82,7 @@ class NetworkManager {
                     }
                 }
                 vods = updatedVODs
-                for vod in vods {
-                    for school in vod.schools {
-                        //print("TEST: \(school.name)")
-                    }
-                }
+
                 group.leave()
             })
             group.wait()
@@ -97,28 +100,45 @@ class NetworkManager {
     }
     
     
-    func getVODs(completionHandler: @escaping (_ vodList: [Vod]) -> Void) {
-        guard let vodURL = URL(string: "\(baseURL)/vod") else { return }
+    func getVODs(fromNextPage: Bool, completionHandler: @escaping (_ vodList: [Vod]) -> Void) {
+        var vodURL = ""
+        if fromNextPage {
+            isPaginating = true
+            if let nextPage = nextPage {
+                vodURL = "\(nextPage)"
+                print("TEST: Paginating \(vodURL)")
+            } else {
+                completionHandler([])
+                isPaginating = false
+                return
+            }
+        } else {
+            vodURL = "\(baseURL)/v3/vod"
+        }
+        guard let vodURL = URL(string: vodURL) else { return }
         
-        let task = URLSession.shared.dataTask(with: vodURL) { (data, response, error) in
+        URLSession.shared.dataTask(with: vodURL) { (data, response, error) in
             guard error == nil, let data = data else { return }
             let decoder = JSONDecoder()
             
             do {
                 let vods = try decoder.decode(Programs.self, from: data)
+                self.nextPage = vods.nextPage
                 if let programs = vods.programs {
                     completionHandler(programs)
+                    if fromNextPage {
+                        self.isPaginating = false
+                    }
                 }
             } catch {
                 print(error)
             }
             
-        }
-        task.resume()
+        }.resume()
     }
     
     func getSports(completionHandler: @escaping () -> Void) {
-        guard let sportsURL = URL(string: "\(baseURL)/sports") else { return }
+        guard let sportsURL = URL(string: "\(baseURL)/v3/sports") else { return }
         
         URLSession.shared.dataTask(with: sportsURL) { (data, response, error) in
             guard error == nil, let data = data else { return }
@@ -141,7 +161,7 @@ class NetworkManager {
     }
     
     func getSchools(completionHandler: @escaping () -> Void) {
-        guard let schoolsURL = URL(string: "\(baseURL)/schools") else { return }
+        guard let schoolsURL = URL(string: "\(baseURL)/v3/schools") else { return }
         
         URLSession.shared.dataTask(with: schoolsURL) { (data, response, error) in
             guard error == nil, let data = data else { return }
@@ -176,9 +196,14 @@ class NetworkManager {
     
     func getImageData(imageURL: String, completionHandler: @escaping (_ data: Data) -> Void) {
         guard let url = URL(string: imageURL) else { return }
+        if let data = thumbnailImages[imageURL] {
+            completionHandler(data)
+            return
+        }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
+                self.thumbnailImages[imageURL] = data
                 completionHandler(data)
             }
         }.resume()

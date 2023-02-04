@@ -6,14 +6,13 @@
 //
 
 import UIKit
+import AVKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var networkManager = NetworkManager()
-    var vods: [Vod]?
+    var vods: [Vod] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,42 +22,29 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.register(UINib(nibName: "VodTableViewCell", bundle: nil), forCellReuseIdentifier: "VodTableViewCell")
         
-        NetworkManager.shared.getVODsList(completionHandler: { vods in
+        NetworkManager.shared.getVODsList(fromNextPage: false, completionHandler: { vods in
             self.vods = vods
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         })
-        
-//        networkManager.getVODs(completionHandler: { (vods) in
-//            DispatchQueue.main.async {
-//                self.vods = vods
-////                for vod in self.vods! {
-////                    print("\(vod.title!)")
-////                    print("--")
-////                    print("Schools")
-////                    for school in vod.schools! {
-////                        print("\(school)")
-////                    }
-////                    print("--\nSports")
-////                    for sport in vod.sports! {
-////                        print("\(sport)")
-////                    }
-////                    print("\n\n")
-////                }
-//                self.tableView.reloadData()
-//            }
-//        })
     }
     
-    
-
-
+    func playVideo(url: URL) {
+        print("TEST: url is \(url)")
+        let player = AVPlayer(url: url)
+        let vc = AVPlayerViewController()
+        vc.player = player
+        self.present(vc, animated: true) {
+            vc.player?.play()
+        }
+    }
 }
 
-extension MainViewController {
+// Table View
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vods?.count ?? 0
+        return vods.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -66,7 +52,7 @@ extension MainViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VodTableViewCell", for: indexPath) as? VodTableViewCell, let vods = vods else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VodTableViewCell", for: indexPath) as? VodTableViewCell else { return UITableViewCell() }
         
         cell.titleLabel.text = vods[indexPath.row].title
         cell.durationLabel.text = secondsToMinutesString(milliseconds: vods[indexPath.row].duration ?? 0)
@@ -82,13 +68,33 @@ extension MainViewController {
             cell.schoolTwoImageView.isHidden = true
         }
         
-        networkManager.getImage(imageURL: vods[indexPath.row].images?.large ?? "", completionHandler: {
-            image in
+        NetworkManager.shared.getImageData(imageURL: vods[indexPath.row].images?.large ?? "", completionHandler: {
+            data in
             DispatchQueue.main.async {
-                cell.thumbnail.image = image
+                cell.thumbnail.image = UIImage(data: data)
             }
         })
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let stringURL = vods[indexPath.row].manifest_url, let url = URL(string: stringURL) else { return }
+        playVideo(url: url)
+    }
+}
+
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height) {
+            guard !NetworkManager.shared.isPaginating else { return }
+            NetworkManager.shared.getVODsList(fromNextPage: true, completionHandler: { vods in
+                self.vods += vods
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        }
     }
 }
 

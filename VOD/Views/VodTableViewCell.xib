@@ -11,17 +11,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VodTableViewCell" rowHeight="300" id="KGk-i7-Jjw" customClass="VodTableViewCell" customModule="VOD" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="VodTableViewCell" rowHeight="300" id="KGk-i7-Jjw" customClass="VodTableViewCell" customModule="VOD" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xg-C3-cFT">
                         <rect key="frame" x="20" y="10" width="280" height="280"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6q-3N-gbk">
+                            <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6q-3N-gbk">
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="175"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GkN-WH-TdA">
@@ -87,7 +87,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HP6-3S-ztO" firstAttribute="top" secondItem="7ZX-cM-QBd" secondAttribute="bottom" constant="5" id="6Bv-ls-tXf"/>
                             <constraint firstItem="HP6-3S-ztO" firstAttribute="leading" secondItem="8xg-C3-cFT" secondAttribute="leading" constant="5" id="GYu-AE-ICZ"/>

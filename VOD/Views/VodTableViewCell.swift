@@ -8,6 +8,8 @@
 import UIKit
 
 class VodTableViewCell: UITableViewCell {
+    
+    var onReuse: () -> Void = {}
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -27,6 +29,14 @@ class VodTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        onReuse()
+        thumbnail.image = UIImage()
+        schoolOneImageView.image = UIImage()
+        schoolTwoImageView.image = UIImage()
     }
     
 }
