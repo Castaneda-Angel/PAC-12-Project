@@ -55,7 +55,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLabel.text = vods[indexPath.row].title
         cell.durationLabel.text = secondsToMinutesString(milliseconds: vods[indexPath.row].duration ?? 0)
-        cell.sportsLabel.text = vods[indexPath.row].sports[0].name ?? ""
+        if vods[indexPath.row].sports.count > 0, let sport = vods[indexPath.row].sports[0].name {
+            cell.sportsLabel.text = sport
+        } else {
+            cell.sportsLabel.isHidden = true
+        }
         if vods[indexPath.row].schools.count == 1 {
             if let schoolOneImageData = vods[indexPath.row].schools[0].imageData {
                 cell.schoolOneImageView.image = UIImage(data: schoolOneImageData)

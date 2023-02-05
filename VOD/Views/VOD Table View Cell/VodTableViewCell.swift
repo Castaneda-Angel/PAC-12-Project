@@ -40,6 +40,7 @@ class VodTableViewCell: UITableViewCell {
         super.prepareForReuse()
         onReuse()
         thumbnail.image = UIImage()
+        sportsLabel.isHidden = false
         SchoolsHorizontalStackView.isHidden = false
         schoolOneStackView.isHidden = false
         schoolTwoStackView.isHidden = false
