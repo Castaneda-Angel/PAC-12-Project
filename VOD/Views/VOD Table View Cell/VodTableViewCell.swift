@@ -34,16 +34,15 @@ class VodTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         onReuse()
         thumbnail.image = UIImage()
-        schoolOneImageView.image = UIImage()
-        schoolTwoImageView.image = UIImage()
+        SchoolsHorizontalStackView.isHidden = false
+        schoolOneStackView.isHidden = false
+        schoolTwoStackView.isHidden = false
     }
     
 }
