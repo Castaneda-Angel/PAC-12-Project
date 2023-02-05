@@ -12,11 +12,12 @@ class VodTableViewCell: UITableViewCell {
     var onReuse: () -> Void = {}
 
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var videoInfoView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var sportsLabel: UILabel!
-    
+    @IBOutlet weak var createdDateLabel: UILabel!
     // School
     @IBOutlet weak var SchoolsHorizontalStackView: UIStackView!
     @IBOutlet weak var schoolOneStackView: UIStackView!
@@ -30,6 +31,12 @@ class VodTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         containerView.layer.cornerRadius = 15
+        videoInfoView.layer.cornerRadius = 10
+        
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        blurView.frame = videoInfoView.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        videoInfoView.insertSubview(blurView, at: 0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

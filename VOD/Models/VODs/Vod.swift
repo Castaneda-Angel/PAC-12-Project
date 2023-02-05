@@ -14,6 +14,7 @@ struct Vod: Codable {
     var duration: Int?
     var schoolsInfo: [SchoolInfo]?
     var sportsInfo: [SportInfo]?
+    var created: String?
     
     //
     var schools: [School] = []
@@ -26,6 +27,7 @@ struct Vod: Codable {
         case duration
         case schoolsInfo = "schools"
         case sportsInfo = "sports"
+        case created
     }
     
 }

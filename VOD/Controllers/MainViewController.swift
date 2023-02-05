@@ -60,6 +60,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.sportsLabel.isHidden = true
         }
+        cell.createdDateLabel.text = dateToDaysAgoString(vods[indexPath.row].created!)
         if vods[indexPath.row].schools.count == 1 {
             if let schoolOneImageData = vods[indexPath.row].schools[0].imageData {
                 cell.schoolOneImageView.image = UIImage(data: schoolOneImageData)
