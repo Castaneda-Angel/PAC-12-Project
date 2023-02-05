@@ -183,17 +183,6 @@ class NetworkManager {
         }.resume()
     }
     
-    func getImage(imageURL: String, completionHandler: @escaping (_ image: UIImage) -> Void) {
-        guard let url = URL(string: imageURL) else { return }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data, let image = UIImage(data: data) {
-                completionHandler(image)
-            }
-        }
-        task.resume()
-    }
-    
     func getImageData(imageURL: String, completionHandler: @escaping (_ data: Data) -> Void) {
         guard let url = URL(string: imageURL) else { return }
         if let data = thumbnailImages[imageURL] {

@@ -99,10 +99,14 @@ extension MainViewController: UIScrollViewDelegate {
             tableView.tableFooterView = Bundle.loadView(fromNib: "loadingFooterView")
             guard !NetworkManager.shared.isPaginating else { return }
             NetworkManager.shared.getVODsList(fromNextPage: true, completionHandler: { vods in
-                self.vods += vods
                 DispatchQueue.main.async {
                     self.tableView.tableFooterView = nil
-                    self.tableView.reloadData()
+                    self.vods += vods
+                    self.tableView.beginUpdates()
+                    for i in self.vods.count - vods.count..<self.vods.count {
+                        self.tableView.insertRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                    }
+                    self.tableView.endUpdates()
                 }
             })
         }
