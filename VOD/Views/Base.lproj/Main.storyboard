@@ -19,10 +19,36 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6u-NI-evY">
+                                <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-iT-ZUz">
+                                        <rect key="frame" x="40" y="50" width="20" height="20"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWX-jT-0nn">
+                                        <rect key="frame" x="19.333333333333343" y="29.666666666666686" width="61" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1Ff-cM-KZ5"/>
+                                    <constraint firstItem="PWX-jT-0nn" firstAttribute="centerX" secondItem="x6u-NI-evY" secondAttribute="centerX" id="Bvr-yq-rkp"/>
+                                    <constraint firstItem="DUQ-iT-ZUz" firstAttribute="centerX" secondItem="x6u-NI-evY" secondAttribute="centerX" id="IcA-fm-B6Q"/>
+                                    <constraint firstItem="DUQ-iT-ZUz" firstAttribute="centerY" secondItem="x6u-NI-evY" secondAttribute="centerY" constant="10" id="RwS-7B-k9k"/>
+                                    <constraint firstAttribute="height" constant="100" id="VJu-vp-8z8"/>
+                                    <constraint firstItem="PWX-jT-0nn" firstAttribute="centerY" secondItem="x6u-NI-evY" secondAttribute="centerY" constant="-10" id="uaq-6D-5VK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="x6u-NI-evY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EoW-Ve-OAW"/>
+                            <constraint firstItem="x6u-NI-evY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PCg-tt-Abn"/>
                             <constraint firstItem="Ivf-6S-KMt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Z4n-jH-fzN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivf-6S-KMt" secondAttribute="bottom" id="eGg-22-OD2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ivf-6S-KMt" secondAttribute="trailing" id="hQt-By-8qX"/>
@@ -30,6 +56,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingView" destination="x6u-NI-evY" id="tSZ-fm-LR5"/>
                         <outlet property="tableView" destination="Ivf-6S-KMt" id="o9c-0s-KBF"/>
                     </connections>
                 </viewController>

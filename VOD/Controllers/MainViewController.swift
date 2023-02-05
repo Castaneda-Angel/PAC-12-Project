@@ -11,6 +11,7 @@ import AVKit
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingView: UIView!
     
     var vods: [Vod] = []
     
@@ -25,6 +26,7 @@ class MainViewController: UIViewController {
         NetworkManager.shared.getVODsList(fromNextPage: false, completionHandler: { vods in
             self.vods = vods
             DispatchQueue.main.async {
+                self.loadingView.isHidden = true
                 self.tableView.reloadData()
             }
         })
