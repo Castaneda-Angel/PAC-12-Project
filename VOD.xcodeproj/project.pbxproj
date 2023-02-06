@@ -119,9 +119,9 @@
 		0BE5C432298B4BF60059A6E1 /* VOD */ = {
 			isa = PBXGroup;
 			children = (
-				0BE5C471298B618C0059A6E1 /* Controllers */,
-				0BE5C470298B616B0059A6E1 /* Views */,
 				0BE5C463298B4C240059A6E1 /* Models */,
+				0BE5C470298B616B0059A6E1 /* Views */,
+				0BE5C471298B618C0059A6E1 /* Controllers */,
 				0BE5C433298B4BF60059A6E1 /* AppDelegate.swift */,
 				0BE5C435298B4BF60059A6E1 /* SceneDelegate.swift */,
 				0BE5C43C298B4BF70059A6E1 /* Assets.xcassets */,

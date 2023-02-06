@@ -20,6 +20,7 @@ class NetworkManager {
     
     // Image cache
     var thumbnailImages: [String:Data] = [:]
+    var requestsForImages: [UUID:URLSessionDataTask] = [:]
     
     // Pagination
     var nextPage: String?
@@ -55,10 +56,12 @@ class NetworkManager {
                 for (key, value) in self.allSchools {
                     if let url = value.images?.small {
                         group.enter()
-                        self.getImageData(imageURL: url, completionHandler: { data in
-                            var school = value
-                            school.imageData = data
-                            self.allSchools[key] = school
+                        let _ = self.getImageData(imageURL: url, completionHandler: { data in
+                            if let data = data {
+                                var school = value
+                                school.imageData = data
+                                self.allSchools[key] = school
+                            }
                             group.leave()
                         })
                         group.wait()
@@ -191,18 +194,35 @@ class NetworkManager {
         }.resume()
     }
     
-    func getImageData(imageURL: String, completionHandler: @escaping (_ data: Data) -> Void) {
-        guard let url = URL(string: imageURL) else { return }
-        if let data = thumbnailImages[imageURL] {
-            completionHandler(data)
-            return
+    func getImageData(imageURL: String, completionHandler: @escaping (Data?) -> Void) -> UUID? {
+        if let imageData = thumbnailImages[imageURL] {
+            completionHandler(imageData)
+            return nil
         }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        guard let url = URL(string: imageURL) else { return nil }
+        
+        let uuid = UUID()
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            defer {
+                self.requestsForImages.removeValue(forKey: uuid)
+            }
+            
             if let data = data {
                 self.thumbnailImages[imageURL] = data
                 completionHandler(data)
+                return
             }
-        }.resume()
+        }
+        task.resume()
+        
+        requestsForImages[uuid] = task
+        return uuid
+    }
+    
+    func cancelRequest(_ uuid: UUID) {
+        requestsForImages[uuid]?.cancel()
+        requestsForImages.removeValue(forKey: uuid)
     }
 }

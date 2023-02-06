@@ -86,12 +86,20 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.SchoolsHorizontalStackView.isHidden = true
         }
         
-        NetworkManager.shared.getImageData(imageURL: vods[indexPath.row].images?.large ?? "", completionHandler: {
+        let token = NetworkManager.shared.getImageData(imageURL: vods[indexPath.row].images?.large ?? "", completionHandler: {
             data in
-            DispatchQueue.main.async {
-                cell.thumbnail.image = UIImage(data: data)
+            if let data = data {
+                DispatchQueue.main.async {
+                    cell.thumbnail.image = UIImage(data: data)
+                }
             }
         })
+        
+        cell.onReuse = {
+            if let token = token {
+                NetworkManager.shared.cancelRequest(token)
+            }
+        }
         
         return cell
     }
