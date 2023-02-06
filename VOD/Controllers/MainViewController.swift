@@ -20,7 +20,6 @@ class MainViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.register(UINib(nibName: "VodTableViewCell", bundle: nil), forCellReuseIdentifier: "VodTableViewCell")
         
         NetworkManager.shared.getVODsList(fromNextPage: false, completionHandler: { vods in
@@ -57,12 +56,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLabel.text = vods[indexPath.row].title
         cell.durationLabel.text = getDurationString(from: vods[indexPath.row].duration ?? 0)
+        
         if vods[indexPath.row].sports.count > 0, let sport = vods[indexPath.row].sports[0].name {
             cell.sportsLabel.text = sport
         } else {
             cell.sportsLabel.isHidden = true
         }
+        
         cell.createdDateLabel.text = getDaysAgoString(from: vods[indexPath.row].created!)
+        
         if vods[indexPath.row].schools.count == 1 {
             if let schoolOneImageData = vods[indexPath.row].schools[0].imageData {
                 cell.schoolOneImageView.image = UIImage(data: schoolOneImageData)
@@ -90,6 +92,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.thumbnail.image = UIImage(data: data)
             }
         })
+        
         return cell
     }
     

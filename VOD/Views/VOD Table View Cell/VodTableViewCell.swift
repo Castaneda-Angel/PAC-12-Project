@@ -18,6 +18,7 @@ class VodTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var sportsLabel: UILabel!
     @IBOutlet weak var createdDateLabel: UILabel!
+    
     // School
     @IBOutlet weak var SchoolsHorizontalStackView: UIStackView!
     @IBOutlet weak var schoolOneStackView: UIStackView!
@@ -33,6 +34,7 @@ class VodTableViewCell: UITableViewCell {
         containerView.layer.cornerRadius = 15
         videoInfoView.layer.cornerRadius = 10
         
+        // Blur for video info view
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         blurView.frame = videoInfoView.bounds
         blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
