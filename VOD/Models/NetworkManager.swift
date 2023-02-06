@@ -14,22 +14,24 @@ class NetworkManager {
         return networkManager
     }()
     
+    // Keeps sports/schools after first load
     var allSports: [Int:Sport] = [:]
     var allSchools: [Int:School] = [:]
     
-    // Images
+    // Image cache
     var thumbnailImages: [String:Data] = [:]
-    
-    let baseURL = "https://api.pac-12.com"
-    let callQueue = OperationQueue()
     
     // Pagination
     var nextPage: String?
     var isPaginating: Bool = false
     
+    let baseURL = "https://api.pac-12.com"
+    let callQueue = OperationQueue()
+    
     func getVODsList(fromNextPage: Bool, completionHandler: @escaping(_ allVods: [Vod]) -> Void) {
         var vods: [Vod] = []
         
+        // Sports -> Schools -> VODs
         let getVODsCalls = BlockOperation {
             let group = DispatchGroup()
             
@@ -48,7 +50,7 @@ class NetworkManager {
                 }
                 group.wait()
                 
-                // FIX, could be more efficient by being asynchronous
+                // Could be more efficient by being asynchronous
                 // value is the School struct
                 for (key, value) in self.allSchools {
                     if let url = value.images?.small {
@@ -67,17 +69,23 @@ class NetworkManager {
             group.enter()
             self.getVODs(fromNextPage: fromNextPage, completionHandler: {
                 vodsList in
+                
+                // Need to add extra data to Vod struct, we know the schools/sports are loaded in by this point so it's safe to grab data from them
                 var updatedVODs = vodsList
                 for i in 0..<updatedVODs.count {
                     if let schools = updatedVODs[i].schoolsInfo {
                         for school in schools {
-                            updatedVODs[i].schools.append(self.allSchools[school.id ?? -1] ?? School())
+                            if let id = school.id, let schoolToAdd = self.allSchools[id] {
+                                updatedVODs[i].schools.append(schoolToAdd)
+                            }
                         }
                     }
                     
                     if let sports = updatedVODs[i].sportsInfo {
                         for sport in sports {
-                            updatedVODs[i].sports.append(self.allSports[sport.id ?? -1] ?? Sport())
+                            if let id = sport.id, let sportToAdd = self.allSports[id] {
+                                updatedVODs[i].sports.append(sportToAdd)
+                            }
                         }
                     }
                 }
@@ -106,7 +114,6 @@ class NetworkManager {
             isPaginating = true
             if let nextPage = nextPage {
                 vodURL = "\(nextPage)"
-                print("TEST: Paginating \(vodURL)")
             } else {
                 completionHandler([])
                 isPaginating = false
@@ -115,6 +122,7 @@ class NetworkManager {
         } else {
             vodURL = "\(baseURL)/v3/vod"
         }
+        
         guard let vodURL = URL(string: vodURL) else { return }
         
         URLSession.shared.dataTask(with: vodURL) { (data, response, error) in
