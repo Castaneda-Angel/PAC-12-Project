@@ -6,7 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
 struct Schools: Codable {
     var schools: [School]?
+}
+
+struct School: Codable {
+    var id: Int?
+    var name: String?
+    var images: Thumbnail?
+    //
+    var imageData: Data?
 }

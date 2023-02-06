@@ -7,6 +7,16 @@
 
 import Foundation
 
+struct Programs: Codable {
+    var programs: [Vod]?
+    var nextPage: String?
+
+    private enum CodingKeys: String, CodingKey {
+        case programs
+        case nextPage = "next_page"
+    }
+}
+
 struct Vod: Codable {
     var images: Thumbnail?
     var title: String?
@@ -30,4 +40,18 @@ struct Vod: Codable {
         case created
     }
     
+}
+
+struct SportInfo: Codable {
+    var id: Int?
+}
+
+struct SchoolInfo: Codable {
+    var id: Int?
+    var homeTeam: Bool?
+    
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case homeTeam = "home_team"
+    }
 }

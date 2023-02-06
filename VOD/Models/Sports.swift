@@ -1,11 +1,15 @@
 //
-//  Sport.swift
+//  Sports.swift
 //  VOD
 //
 //  Created by Angel Castaneda on 2/3/23.
 //
 
 import Foundation
+
+struct Sports: Codable {
+    var sports: [Sport]?
+}
 
 struct Sport: Codable {
     var name: String?

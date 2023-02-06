@@ -18,17 +18,12 @@
 		0BE5C457298B4BF70059A6E1 /* VODUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C456298B4BF70059A6E1 /* VODUITestsLaunchTests.swift */; };
 		0BE5C465298B4C5B0059A6E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C464298B4C5B0059A6E1 /* NetworkManager.swift */; };
 		0BE5C467298B4E1C0059A6E1 /* Vod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C466298B4E1C0059A6E1 /* Vod.swift */; };
-		0BE5C469298B58A50059A6E1 /* SportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C468298B58A50059A6E1 /* SportInfo.swift */; };
-		0BE5C46B298B58AB0059A6E1 /* SchoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C46A298B58AB0059A6E1 /* SchoolInfo.swift */; };
-		0BE5C46D298B5AB70059A6E1 /* Programs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C46C298B5AB70059A6E1 /* Programs.swift */; };
 		0BE5C46F298B5D110059A6E1 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C46E298B5D110059A6E1 /* Thumbnail.swift */; };
 		0BE5C474298B63180059A6E1 /* VodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C472298B63180059A6E1 /* VodTableViewCell.swift */; };
 		0BE5C475298B63180059A6E1 /* VodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE5C473298B63180059A6E1 /* VodTableViewCell.xib */; };
 		0BE5C477298CC3880059A6E1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C476298CC3880059A6E1 /* Utilities.swift */; };
 		0BE5C479298E033D0059A6E1 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C478298E033D0059A6E1 /* Sports.swift */; };
-		0BE5C47D298E05D00059A6E1 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C47C298E05D00059A6E1 /* Sport.swift */; };
 		0BE5C480298E06960059A6E1 /* Schools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C47F298E06960059A6E1 /* Schools.swift */; };
-		0BE5C482298E06AB0059A6E1 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C481298E06AB0059A6E1 /* School.swift */; };
 		0BE5C486298F0FA70059A6E1 /* loadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C485298F0FA70059A6E1 /* loadingFooterView.swift */; };
 		0BE5C488298F0FB70059A6E1 /* loadingFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE5C487298F0FB70059A6E1 /* loadingFooterView.xib */; };
 /* End PBXBuildFile section */
@@ -66,17 +61,12 @@
 		0BE5C456298B4BF70059A6E1 /* VODUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VODUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0BE5C464298B4C5B0059A6E1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0BE5C466298B4E1C0059A6E1 /* Vod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vod.swift; sourceTree = "<group>"; };
-		0BE5C468298B58A50059A6E1 /* SportInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportInfo.swift; sourceTree = "<group>"; };
-		0BE5C46A298B58AB0059A6E1 /* SchoolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolInfo.swift; sourceTree = "<group>"; };
-		0BE5C46C298B5AB70059A6E1 /* Programs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programs.swift; sourceTree = "<group>"; };
 		0BE5C46E298B5D110059A6E1 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		0BE5C472298B63180059A6E1 /* VodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VodTableViewCell.swift; sourceTree = "<group>"; };
 		0BE5C473298B63180059A6E1 /* VodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VodTableViewCell.xib; sourceTree = "<group>"; };
 		0BE5C476298CC3880059A6E1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0BE5C478298E033D0059A6E1 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
-		0BE5C47C298E05D00059A6E1 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		0BE5C47F298E06960059A6E1 /* Schools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schools.swift; sourceTree = "<group>"; };
-		0BE5C481298E06AB0059A6E1 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		0BE5C485298F0FA70059A6E1 /* loadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingFooterView.swift; sourceTree = "<group>"; };
 		0BE5C487298F0FB70059A6E1 /* loadingFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = loadingFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,10 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				0BE5C464298B4C5B0059A6E1 /* NetworkManager.swift */,
-				0BE5C46C298B5AB70059A6E1 /* Programs.swift */,
-				0BE5C47A298E05560059A6E1 /* VODs */,
-				0BE5C47B298E05BB0059A6E1 /* Sports */,
-				0BE5C47E298E067C0059A6E1 /* Schools */,
+				0BE5C466298B4E1C0059A6E1 /* Vod.swift */,
+				0BE5C478298E033D0059A6E1 /* Sports.swift */,
+				0BE5C47F298E06960059A6E1 /* Schools.swift */,
 				0BE5C46E298B5D110059A6E1 /* Thumbnail.swift */,
 				0BE5C476298CC3880059A6E1 /* Utilities.swift */,
 			);
@@ -188,34 +177,6 @@
 				0BE5C437298B4BF60059A6E1 /* MainViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0BE5C47A298E05560059A6E1 /* VODs */ = {
-			isa = PBXGroup;
-			children = (
-				0BE5C466298B4E1C0059A6E1 /* Vod.swift */,
-				0BE5C468298B58A50059A6E1 /* SportInfo.swift */,
-				0BE5C46A298B58AB0059A6E1 /* SchoolInfo.swift */,
-			);
-			path = VODs;
-			sourceTree = "<group>";
-		};
-		0BE5C47B298E05BB0059A6E1 /* Sports */ = {
-			isa = PBXGroup;
-			children = (
-				0BE5C478298E033D0059A6E1 /* Sports.swift */,
-				0BE5C47C298E05D00059A6E1 /* Sport.swift */,
-			);
-			path = Sports;
-			sourceTree = "<group>";
-		};
-		0BE5C47E298E067C0059A6E1 /* Schools */ = {
-			isa = PBXGroup;
-			children = (
-				0BE5C47F298E06960059A6E1 /* Schools.swift */,
-				0BE5C481298E06AB0059A6E1 /* School.swift */,
-			);
-			path = Schools;
 			sourceTree = "<group>";
 		};
 		0BE5C483298F0ECD0059A6E1 /* VOD Table View Cell */ = {
@@ -369,21 +330,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BE5C46B298B58AB0059A6E1 /* SchoolInfo.swift in Sources */,
 				0BE5C474298B63180059A6E1 /* VodTableViewCell.swift in Sources */,
 				0BE5C477298CC3880059A6E1 /* Utilities.swift in Sources */,
 				0BE5C465298B4C5B0059A6E1 /* NetworkManager.swift in Sources */,
 				0BE5C438298B4BF60059A6E1 /* MainViewController.swift in Sources */,
 				0BE5C46F298B5D110059A6E1 /* Thumbnail.swift in Sources */,
-				0BE5C47D298E05D00059A6E1 /* Sport.swift in Sources */,
 				0BE5C467298B4E1C0059A6E1 /* Vod.swift in Sources */,
-				0BE5C46D298B5AB70059A6E1 /* Programs.swift in Sources */,
 				0BE5C480298E06960059A6E1 /* Schools.swift in Sources */,
 				0BE5C486298F0FA70059A6E1 /* loadingFooterView.swift in Sources */,
 				0BE5C434298B4BF60059A6E1 /* AppDelegate.swift in Sources */,
-				0BE5C469298B58A50059A6E1 /* SportInfo.swift in Sources */,
 				0BE5C479298E033D0059A6E1 /* Sports.swift in Sources */,
-				0BE5C482298E06AB0059A6E1 /* School.swift in Sources */,
 				0BE5C436298B4BF60059A6E1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
