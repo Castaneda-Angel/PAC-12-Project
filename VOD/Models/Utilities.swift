@@ -7,35 +7,49 @@
 
 import Foundation
 
-func secondsToMinutesString(milliseconds: Int) -> String {
-    let minutes = String(milliseconds/60000)
+func getDurationString(from milliseconds: Int) -> String {
+    var minutes = String(milliseconds/60000)
     var seconds = String((milliseconds % 60000)/1000)
     
+    if minutes.count < 2 {
+        minutes = "0\(minutes)"
+    }
     if seconds.count < 2 {
         seconds = "0\(seconds)"
     }
     return "\(minutes):\(seconds)"
 }
 
-func dateToDaysAgoString(_ stringDate: String) -> String {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+func getDaysAgoString(from stringDate: String) -> String {
+    let dateFormatter = ISO8601DateFormatter()
+    
+    //Turns string date to Date type, need to follow ISO8601 so we need the above dateFormatter for this
     let date = dateFormatter.date(from: stringDate)
     
-    let calendar = Calendar.current
+    //New formatter to get generic date (fixes timezone issue)
+    let genericDateFormatter = DateFormatter()
+    genericDateFormatter.timeZone = TimeZone.current
+    genericDateFormatter.dateFormat = "yyyy-MM-dd"
     
-    let createdDateComponents = calendar.dateComponents([.day, .month, .year], from: date!)
-    let createdDate = calendar.date(from: createdDateComponents)
-    
-    //let dayDiff = calendar.dateComponents([.day], from: today, to: createdDay)
-    let dayDiff = calendar.dateComponents([.day], from: Date(), to: createdDate!).day
-    if abs(dayDiff!) == 0 {
-        return "Today"
-    } else if abs(dayDiff!) == 1 {
-        return "Yesterday"
+    if let createdDate = date {
+        // Turns the ISO date back to a string following the genericDateFormatter format
+        let createdDateString = genericDateFormatter.string(from: createdDate)
+        
+        // Turns the generic date string back into a Date (we need 2 Dates to get the difference between them)
+        if let updatedDate = genericDateFormatter.date(from: createdDateString), let dayDiff = Calendar.current.dateComponents([.day], from: Date(), to: updatedDate).day {
+            
+            // dayDiff is negative, abs() is necessary
+            if abs(dayDiff) == 0 {
+                return "Today"
+            } else if abs(dayDiff) == 1 {
+                return "Yesterday"
+            } else {
+                return "\(abs(dayDiff)) days ago"
+            }
+        } else {
+            return ""
+        }
     } else {
-        return "\(abs(dayDiff!)) days ago"
+        return ""
     }
 }
-
-var sports: [Int:Sport] = [:]
