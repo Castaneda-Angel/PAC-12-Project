@@ -26,7 +26,7 @@ struct Vod: Codable {
     var sportsInfo: [SportInfo]?
     var created: String?
     
-    //
+    // Populated after decode
     var schools: [School] = []
     var sports: [Sport] = []
     

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Would have been writen differently without a time constraint. For example, the sports/school dictionaries being a part of this is for simplicity, but they should have their own space without being a part of the Network Manager.
 class NetworkManager {
     
     static var shared: NetworkManager = {
@@ -36,6 +37,7 @@ class NetworkManager {
         let getVODsCalls = BlockOperation {
             let group = DispatchGroup()
             
+            // The sports and schools calls can be asynchronous, they don't rely on each other to finish so they don't need to be queued one after the other.
             if self.allSports.isEmpty {
                 group.enter()
                 self.getSports {

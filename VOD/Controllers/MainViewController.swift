@@ -24,7 +24,9 @@ class MainViewController: UIViewController {
         
         NetworkManager.shared.getVODsList(fromNextPage: false, completionHandler: { vods in
             self.vods = vods
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
                 self.loadingView.isHidden = true
                 self.tableView.reloadData()
             }
@@ -36,7 +38,9 @@ class MainViewController: UIViewController {
         let vc = AVPlayerViewController()
         vc.player = player
         self.present(vc, animated: true) {
-            vc.player?.play()
+            if let videoPlayer = vc.player {
+                videoPlayer.play()
+            }
         }
     }
 }
@@ -57,8 +61,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = vods[indexPath.row].title
         cell.durationLabel.text = getDurationString(from: vods[indexPath.row].duration ?? 0)
         
-        if vods[indexPath.row].sports.count > 0, let sport = vods[indexPath.row].sports[0].name {
-            cell.sportsLabel.text = sport
+        // When there's more than one sport associated with each VOD, we add a + to the end of label text to signify that there are more sports. My current UI doesn't have space to show multiple sports cleanly, but one way to adjust the current UI to show more could be to allow a tap gesture of the cell to expand the cell a bit and show more sports names!
+        let sportsCount = vods[indexPath.row].sports.count
+        if sportsCount > 0, let sport = vods[indexPath.row].sports[0].name {
+            if sportsCount > 1 {
+                cell.sportsLabel.text = "\(sport) + \(sportsCount - 1)"
+            } else {
+                cell.sportsLabel.text = sport
+            }
         } else {
             cell.sportsLabel.isHidden = true
         }
@@ -104,39 +114,37 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // Ideally we would only be able to tap the video thumbnail to play the video, but for simplicity we allow any tap of the cell to play the video.
+    // To tap thumbnail, we would add a tap gesture to the image and have a protocol from the cell that we conform to here, we would then play the video from that function and wouldn't need to keep this function.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let stringURL = vods[indexPath.row].manifest_url, let url = URL(string: stringURL) else { return }
         playVideo(url: url)
     }
 }
 
+// Scroll View
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
+        
+        // position variable gives position from top, so to get proper calculation we need to subtract scroll view height
         if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height) {
-            tableView.tableFooterView = Bundle.loadView(fromNib: "loadingFooterView")
+            tableView.tableFooterView = loadViewFromNib("loadingFooterView")
             guard !NetworkManager.shared.isPaginating else { return }
             NetworkManager.shared.getVODsList(fromNextPage: true, completionHandler: { vods in
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    
                     self.tableView.tableFooterView = nil
                     self.vods += vods
                     self.tableView.beginUpdates()
+                    // Manually inserts new rows, prevents image blinking when adding new VODs to array
                     for i in self.vods.count - vods.count..<self.vods.count {
                         self.tableView.insertRows(at: [IndexPath(row: i, section: 0)], with: .none)
                     }
                     self.tableView.endUpdates()
                 }
             })
-        }
-    }
-}
-
-extension Bundle {
-    static func loadView(fromNib name: String) -> UIView {
-        if let view = Bundle.main.loadNibNamed(name, owner: nil)?.first as? UIView {
-            return view
-        } else {
-            return UIView()
         }
     }
 }

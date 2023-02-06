@@ -24,7 +24,6 @@
 		0BE5C477298CC3880059A6E1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C476298CC3880059A6E1 /* Utilities.swift */; };
 		0BE5C479298E033D0059A6E1 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C478298E033D0059A6E1 /* Sports.swift */; };
 		0BE5C480298E06960059A6E1 /* Schools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C47F298E06960059A6E1 /* Schools.swift */; };
-		0BE5C486298F0FA70059A6E1 /* loadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE5C485298F0FA70059A6E1 /* loadingFooterView.swift */; };
 		0BE5C488298F0FB70059A6E1 /* loadingFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BE5C487298F0FB70059A6E1 /* loadingFooterView.xib */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +66,6 @@
 		0BE5C476298CC3880059A6E1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0BE5C478298E033D0059A6E1 /* Sports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 		0BE5C47F298E06960059A6E1 /* Schools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schools.swift; sourceTree = "<group>"; };
-		0BE5C485298F0FA70059A6E1 /* loadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingFooterView.swift; sourceTree = "<group>"; };
 		0BE5C487298F0FB70059A6E1 /* loadingFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = loadingFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,9 +162,9 @@
 		0BE5C470298B616B0059A6E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0BE5C484298F0F7A0059A6E1 /* VOD Table View Footer */,
-				0BE5C483298F0ECD0059A6E1 /* VOD Table View Cell */,
 				0BE5C439298B4BF60059A6E1 /* Main.storyboard */,
+				0BE5C487298F0FB70059A6E1 /* loadingFooterView.xib */,
+				0BE5C483298F0ECD0059A6E1 /* VOD Table View Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,15 +184,6 @@
 				0BE5C473298B63180059A6E1 /* VodTableViewCell.xib */,
 			);
 			path = "VOD Table View Cell";
-			sourceTree = "<group>";
-		};
-		0BE5C484298F0F7A0059A6E1 /* VOD Table View Footer */ = {
-			isa = PBXGroup;
-			children = (
-				0BE5C485298F0FA70059A6E1 /* loadingFooterView.swift */,
-				0BE5C487298F0FB70059A6E1 /* loadingFooterView.xib */,
-			);
-			path = "VOD Table View Footer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,7 +326,6 @@
 				0BE5C46F298B5D110059A6E1 /* Thumbnail.swift in Sources */,
 				0BE5C467298B4E1C0059A6E1 /* Vod.swift in Sources */,
 				0BE5C480298E06960059A6E1 /* Schools.swift in Sources */,
-				0BE5C486298F0FA70059A6E1 /* loadingFooterView.swift in Sources */,
 				0BE5C434298B4BF60059A6E1 /* AppDelegate.swift in Sources */,
 				0BE5C479298E033D0059A6E1 /* Sports.swift in Sources */,
 				0BE5C436298B4BF60059A6E1 /* SceneDelegate.swift in Sources */,

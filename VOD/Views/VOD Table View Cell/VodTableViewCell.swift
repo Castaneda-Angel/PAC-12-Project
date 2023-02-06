@@ -19,7 +19,7 @@ class VodTableViewCell: UITableViewCell {
     @IBOutlet weak var sportsLabel: UILabel!
     @IBOutlet weak var createdDateLabel: UILabel!
     
-    // School
+    // School section
     @IBOutlet weak var SchoolsHorizontalStackView: UIStackView!
     @IBOutlet weak var schoolOneStackView: UIStackView!
     @IBOutlet weak var schoolOneImageView: UIImageView!

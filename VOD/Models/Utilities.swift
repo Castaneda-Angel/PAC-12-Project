@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 func getDurationString(from milliseconds: Int) -> String {
     var minutes = String(milliseconds/60000)
@@ -51,5 +52,13 @@ func getDaysAgoString(from stringDate: String) -> String {
         }
     } else {
         return ""
+    }
+}
+
+func loadViewFromNib(_ name: String) -> UIView? {
+    if let view = Bundle.main.loadNibNamed(name, owner: nil)?.first as? UIView {
+        return view
+    } else {
+        return nil
     }
 }
